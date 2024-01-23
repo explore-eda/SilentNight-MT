@@ -3,6 +3,7 @@
 install.packages("readxl")
 install.packages("xportr")
 
+#install.packages(c('dplyr', 'labelled', 'xportr', 'admiral', 'rlang', 'readxl'))
 # Load the package
 library(readxl)
 library(xportr)
@@ -70,22 +71,4 @@ ts_metadata <- data.frame(
   format = NA
 )
 
-
 install.packages(c('dplyr', 'labelled', 'xportr', 'admiral', 'rlang', 'readxl'))
-
-# Loading packages
-library(dplyr)
-library(labelled)
-library(xportr)
-library(admiral)
-library(rlang)
-library(readxl)
-
-# Loading in our example data
-adsl <- admiral_adsl
-var_spec <- read_xlsx(
-  system.file(paste0("specs/", "ADaM_admiral_spec.xlsx"), package = "xportr"),
-  sheet = "Variables"
-) %>%
-  rename(type = "Data Type") %>%
-  set_names(tolower)
