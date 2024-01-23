@@ -9,6 +9,8 @@ library(readxl)
 library(xportr)
 library(tidyverse)
 
+library(tibble)
+
 # Clean up environment - remove all objects
 rm(list=ls())
 
@@ -61,14 +63,43 @@ xTS <- TS %>%
   # Change any numeric NAs to empty strings ("")
   mutate(across(where(is.character), ~replace(., is.na(.), ""))) 
 
+#Check dataframe label
+attr(xTS, "label")
+
+
+
+# Function to check dataframe metadata
+contents <- function(dat) {
+  
+  # Define a function to give the contents of a row
+  row_contents <- function(m, dat) {
+    # Pull out the column
+    var <- dat[[m]]
+    # Make a data frame of the content of interest
+    as.data.frame(
+      list(
+        # Variable name was passed in as a string
+        Variable = m,
+        # Variable class
+        Class =  class(var),
+        # Label 
+        Label = ifelse(is.null(attr(var, 'label')), '', attr(var, 'label')),
+        #Format
+        Format = ifelse(is.null(attr(var, 'SASformat')), '', attr(var, 'SASformat'))
+      )
+    )
+  }
+  
+  # Map the function over all contents and build a data.frame
+  purrr::map_dfr(names(dat), row_contents, dat=dat)
+}
+
+# Check metadata
+xTS %>%
+  contents()
+
+# Output to specified path
+xportr_write(xTS, "dev/output/ts.xpt")
+
 ########
-# Export as xpt
 
-ts_metadata <- data.frame(
-  dataset = "Trial Summary",
-  variable = c("Subj", "Param", "Val", "NotUsed"),
-  type = c("numeric", "character", "numeric", "character"),
-  format = NA
-)
-
-install.packages(c('dplyr', 'labelled', 'xportr', 'admiral', 'rlang', 'readxl'))
