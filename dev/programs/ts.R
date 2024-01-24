@@ -9,20 +9,13 @@ library(readxl)
 library(xportr)
 library(tidyverse)
 
-library(tibble)
+#library(tibble)
 
 # Clean up environment - remove all objects
 rm(list=ls())
 
 # Read the excel
-TS <- read_xlsx("data/Trial Design Domains.xlsx", sheet = 1) 
-# %>%
-#  rename(type = "Data Type") %>%
-#  set_names(tolower)
-TE <- read_xlsx("data/Trial Design Domains.xlsx", sheet = 2)
-TA <- read_xlsx("data/Trial Design Domains.xlsx", sheet = 3)
-TV <- read_xlsx("data/Trial Design Domains.xlsx", sheet = 4)
-TI <- read_xlsx("data/Trial Design Domains.xlsx", sheet = 5)
+TS <- read_xlsx("data/Trial Design Domains.xlsx", sheet = 1)
 
 ########
 # Final outputs
@@ -66,8 +59,6 @@ xTS <- TS %>%
 #Check dataframe label
 attr(xTS, "label")
 
-
-
 # Function to check dataframe metadata
 contents <- function(dat) {
   
@@ -101,5 +92,4 @@ xTS %>%
 # Output to specified path
 xportr_write(xTS, "dev/output/ts.xpt")
 
-########
 
