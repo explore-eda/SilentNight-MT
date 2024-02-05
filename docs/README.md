@@ -12,6 +12,8 @@ https://netorgft5511632.sharepoint.com/:w:/s/edaclinical.com/ETTooNlbO_hDnUFRo9Z
 Schedule of Assessments
 https://netorgft5511632.sharepoint.com/:w:/s/edaclinical.com/ER7oWJ2eKrZMp2M9bHC-LekBi0GCPXDXETczg-s-mJMyTA?e=23zekP
 
+SPECS
+https://netorgft5511632.sharepoint.com/:x:/s/edaclinical.com/EfwS6BtILppMkd-U_qEIzvgBljZHNMFZNhXkcQ2yiH0vVw?e=q6M5ou
+
 New SAP
 https://netorgft5511632.sharepoint.com/:w:/s/edaclinical.com/EZdFO91hYmFDuztAeQDk6r0Bwyd402kSqAEgp4fNHRKFbA?e=4RsJli
-
