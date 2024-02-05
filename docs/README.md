@@ -5,3 +5,9 @@ https://netorgft5511632.sharepoint.com/:x:/s/edaclinical.com/EcKw7s8W8y1Jnc8Tfp0
 
 Casebook pdf
 https://netorgft5511632.sharepoint.com/:b:/s/edaclinical.com/Ee6Dy1miLfFEtLBe9jkBn44BKdya0bIEr2Z1dYimBWvL5g?e=xJ7odi
+
+Shells
+https://netorgft5511632.sharepoint.com/:w:/s/edaclinical.com/ETTooNlbO_hDnUFRo9ZlxekBumOn20rC66jViwkvgb5p8g?e=VGiLWz
+
+New SAP
+https://netorgft5511632.sharepoint.com/:w:/s/edaclinical.com/EZdFO91hYmFDuztAeQDk6r0Bwyd402kSqAEgp4fNHRKFbA?e=4RsJli
