@@ -17,3 +17,6 @@ https://netorgft5511632.sharepoint.com/:x:/s/edaclinical.com/EfwS6BtILppMkd-U_qE
 
 New SAP
 https://netorgft5511632.sharepoint.com/:w:/s/edaclinical.com/EZdFO91hYmFDuztAeQDk6r0Bwyd402kSqAEgp4fNHRKFbA?e=4RsJli
+
+Trial Design Domains Data
+https://netorgft5511632.sharepoint.com/:x:/s/edaclinical.com/EXwEpPPP7lZDlxJBRwXOr2sBHT8OLXE0azHKP6OYRZdpMA?e=H5dsrG
