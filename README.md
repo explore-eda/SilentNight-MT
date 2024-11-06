@@ -9,7 +9,7 @@ The mock trial replicates the study visit schedule, portraying subject results a
 
 /data: Includes the source data for the study
 
-/dev /qc:  Houses the code for standardizing data using SDTM, and producing study results.
+/dev:  Houses the code for standardizing data using SDTM, and producing study results.
 
 /output: Stores the output files, including tables, listings, and figures.
 
