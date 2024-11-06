@@ -1,0 +1,10 @@
+Subject_ID,Were any medications/therapies taken?,Medication/Therapies,Indication,Dose,Dose Unit,Dose Unit Other,Dose Form,Dose Form Other,Frequency,Frequency Other,Route,Route_Other,Start Date,Ongoing,End Date
+26,Yes,Metformin HCL,Diabetes,500,mg, ,Tablet, ,BID, ,Oral, ,08/18/1992,"Yes	",
+27,Yes,Choltran,Jaundice,4,g, ,Suspension, ,BID, ,"	Oral", ,01/20/2008,No,05/14/2008
+15,Yes,Ibuprofen,Fracture,400,mg, ,Tablet, ,TID, ,Oral, ,05-08-1978,No,06/13/1978
+15,Yes,Naproxen,Fracture,"500	",mg, ,Tablet, ,BID, ,Oral, ,"	05-08-1978",No,06/13/1978
+15,Yes,Paracetamol,Pain Relief,500,mg, ,Tablet, ,BID, ,Oral, ,"	05-08-1978",No,06/13/1978
+5,Yes,Losartan C,Hypertension,50,mg, ,Tablet, ,QD, ,Oral, ,09/25/2001,"Yes	",
+5,Yes,Pantoprazole,Acid Reflux,40,mg, ,Tablet, ,QD, ,Oral, ,09/25/2001,"Yes	",
+19,Yes,Piperacillin-Tazobactam,Appendicities,4.5,g, ,injectable, ,BID, ,Other,Intravenous,01/21/2008,No,02-10-2008
+19,Yes,Pantoprazole,Peptic ulcer,40,mg, ,Tablet, ,BID, ,Oral, ,01/21/2008,"No	",05-10-2008

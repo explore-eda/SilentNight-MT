@@ -1,0 +1,11 @@
+Subject_ID,Disposition Category,What is the trial epoch for this disposition event?,Completion/Discontinuation Date,Completion/Discontinuation Time,What was the subject's status?,Subject's Status Other
+22,Disposition Event,Screening,01-02-2019, ,"SCREEN FAILURE	",
+33,Disposition Event,Screening,01-06-2019, ,"SCREEN FAILURE	",
+37,Disposition Event,Screening,01-04-2019, ,"SCREEN FAILURE	",
+26,Disposition Event,Treatment 2,01/24/2019,,ADVERSE EVENT,
+14,Disposition Event,Treatment 2,01/28/2019,,ADVERSE EVENT,
+7,Disposition Event,Treatment 2,01/16/2019,,OTHER,PRODUCT DAMAGE
+31,Disposition Event,Treatment 2,01/14/2019,,OTHER,PRODUCT DAMAGE
+13,Disposition Event,Treatment 1,01-12-2019,,LOST TO FOLLOW-UP,
+20,Disposition Event,Treatment 1,01-19-2019,,LOST TO FOLLOW-UP,
+23,Disposition Event,Treatment 1,01-19-2019,,LOST TO FOLLOW-UP,
