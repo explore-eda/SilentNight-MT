@@ -1,0 +1,441 @@
+{
+    "datasetJSONCreationDateTime": "2025-01-15T12:01:23",
+    "datasetJSONVersion": "1.1.0",
+    "fileOID": "XYZ_SDTM_ADDR",
+    "dbLastModifiedDateTime": "2025-01-15T12:01:22",
+    "originator": "EDA Clinical",
+    "sourceSystem": {
+        "name": "Python",
+        "version": "3.8.0"
+    },
+    "studyOID": "SilentNight",
+    "metaDataVersionOID": "1.0",
+    "metaDataRef": "define.xml",
+    "itemGroupOID": "IG.ADDR",
+    "records": 79,
+    "name": "ADDR",
+    "label": "Analysis Dataset of Device Subject Relationships",
+    "columns": [
+        {
+            "itemOID": "IT.ADDR.STUDYID",
+            "name": "STUDYID",
+            "label": "Study Identifier",
+            "dataType": "string",
+            "length": 3,
+            "keySequence": 1
+        },
+        {
+            "itemOID": "IT.ADDR.USUBJID",
+            "name": "USUBJID",
+            "label": "Unique Subject Identifier",
+            "dataType": "string",
+            "length": 10,
+            "keySequence": 2
+        },
+        {
+            "itemOID": "IT.ADDR.SPDEVID",
+            "name": "SPDEVID",
+            "label": "Sponsor Device Identifier",
+            "dataType": "string",
+            "length": 7,
+            "keySequence": 3
+        }
+    ],
+    "rows": [
+        [
+            "XYZ",
+            "XYZ-001-1",
+            "Mute"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-1",
+            "MyTAP V"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-1",
+            "SPT"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-2",
+            "Mute"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-2",
+            "MyTAP V"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-2",
+            "SPT"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-5",
+            "Mute"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-5",
+            "MyTAP V"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-5",
+            "SPT"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-6",
+            "Mute"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-6",
+            "MyTAP V"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-6",
+            "SPT"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-7",
+            "Mute"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-7",
+            "SPT"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-8",
+            "Mute"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-8",
+            "MyTAP V"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-8",
+            "SPT"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-12",
+            "Mute"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-12",
+            "MyTAP V"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-12",
+            "SPT"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-13",
+            "Mute"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-13",
+            "MyTAP V"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-13",
+            "SPT"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-14",
+            "Mute"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-14",
+            "MyTAP V"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-14",
+            "SPT"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-15",
+            "Mute"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-15",
+            "MyTAP V"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-15",
+            "SPT"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-16",
+            "Mute"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-16",
+            "MyTAP V"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-16",
+            "SPT"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-17",
+            "Mute"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-17",
+            "MyTAP V"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-17",
+            "SPT"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-18",
+            "Mute"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-18",
+            "MyTAP V"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-18",
+            "SPT"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-19",
+            "Mute"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-19",
+            "MyTAP V"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-19",
+            "SPT"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-20",
+            "Mute"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-20",
+            "MyTAP V"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-20",
+            "SPT"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-21",
+            "Mute"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-21",
+            "MyTAP V"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-21",
+            "SPT"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-23",
+            "Mute"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-23",
+            "MyTAP V"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-23",
+            "SPT"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-26",
+            "Mute"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-26",
+            "MyTAP V"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-26",
+            "SPT"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-27",
+            "Mute"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-27",
+            "MyTAP V"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-27",
+            "SPT"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-28",
+            "Mute"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-28",
+            "MyTAP V"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-28",
+            "SPT"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-29",
+            "Mute"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-29",
+            "MyTAP V"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-29",
+            "SPT"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-31",
+            "Mute"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-31",
+            "SPT"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-32",
+            "Mute"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-32",
+            "MyTAP V"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-32",
+            "SPT"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-34",
+            "Mute"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-34",
+            "MyTAP V"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-34",
+            "SPT"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-35",
+            "Mute"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-35",
+            "MyTAP V"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-35",
+            "SPT"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-38",
+            "Mute"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-38",
+            "MyTAP V"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-38",
+            "SPT"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-39",
+            "Mute"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-39",
+            "MyTAP V"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-39",
+            "SPT"
+        ]
+    ]
+}

@@ -1,0 +1,486 @@
+{
+    "datasetJSONCreationDateTime": "2025-01-15T11:51:56",
+    "datasetJSONVersion": "1.1.0",
+    "fileOID": "XYZ_SDTM_ADAE",
+    "dbLastModifiedDateTime": "2025-01-15T11:51:56",
+    "originator": "EDA Clinical",
+    "sourceSystem": {
+        "name": "Python",
+        "version": "3.8.0"
+    },
+    "studyOID": "SilentNight",
+    "metaDataVersionOID": "1.0",
+    "metaDataRef": "define.xml",
+    "itemGroupOID": "IG.ADAE",
+    "records": 2,
+    "name": "ADAE",
+    "label": "Analysis Dataset of Adverse Events",
+    "columns": [
+        {
+            "itemOID": "IT.ADAE.STUDYID",
+            "name": "STUDYID",
+            "label": "Study Identifier",
+            "dataType": "string",
+            "length": 3,
+            "keySequence": 1
+        },
+        {
+            "itemOID": "IT.ADAE.DOMAIN",
+            "name": "DOMAIN",
+            "label": "Domain",
+            "dataType": "string",
+            "length": 4,
+            "keySequence": 2
+        },
+        {
+            "itemOID": "IT.ADAE.USUBJID",
+            "name": "USUBJID",
+            "label": "Unique Subject Identifier",
+            "dataType": "string",
+            "length": 10,
+            "keySequence": 3
+        },
+        {
+            "itemOID": "IT.ADAE.SUBJID",
+            "name": "SUBJID",
+            "label": "Subject Identifier for the Study",
+            "dataType": "integer",
+            "length": 2,
+            "keySequence": 4
+        },
+        {
+            "itemOID": "IT.ADAE.SITEID",
+            "name": "SITEID",
+            "label": "Study Site Identifier",
+            "dataType": "integer",
+            "length": 1,
+            "keySequence": 5
+        },
+        {
+            "itemOID": "IT.ADAE.ARM",
+            "name": "ARM",
+            "label": "Actual ARM",
+            "dataType": "string",
+            "length": 16,
+            "keySequence": 6
+        },
+        {
+            "itemOID": "IT.ADAE.AETERM",
+            "name": "AETERM",
+            "label": "Reported Term for the Adverse Event",
+            "dataType": "string",
+            "length": 8,
+            "keySequence": 7
+        },
+        {
+            "itemOID": "IT.ADAE.AEDECOD",
+            "name": "AEDECOD",
+            "label": "Dictionary Derived Term",
+            "dataType": "integer",
+            "length": 3,
+            "keySequence": 8
+        },
+        {
+            "itemOID": "IT.ADAE.AESER",
+            "name": "AESER",
+            "label": "Serious Event",
+            "dataType": "string",
+            "length": 2,
+            "keySequence": 9
+        },
+        {
+            "itemOID": "IT.ADAE.AESEV",
+            "name": "AESEV",
+            "label": "Severity/Intensity",
+            "dataType": "string",
+            "length": 4,
+            "keySequence": 10
+        },
+        {
+            "itemOID": "IT.ADAE.DTHFL",
+            "name": "DTHFL",
+            "label": "Death Flag",
+            "dataType": "integer",
+            "length": 3,
+            "keySequence": 11
+        },
+        {
+            "itemOID": "IT.ADAE.SAFFL",
+            "name": "SAFFL",
+            "label": "Safety Flag",
+            "dataType": "string",
+            "length": 1,
+            "keySequence": 12
+        },
+        {
+            "itemOID": "IT.ADAE.FASFL",
+            "name": "FASFL",
+            "label": "Full Analysis Set",
+            "dataType": "integer",
+            "length": 3,
+            "keySequence": 13
+        },
+        {
+            "itemOID": "IT.ADAE.ITTFL",
+            "name": "ITTFL",
+            "label": "Intent-to-Treat",
+            "dataType": "string",
+            "length": 1,
+            "keySequence": 14
+        },
+        {
+            "itemOID": "IT.ADAE.COMPLFL",
+            "name": "COMPLFL",
+            "label": "Completed the Study",
+            "dataType": "string",
+            "length": 1,
+            "keySequence": 15
+        },
+        {
+            "itemOID": "IT.ADAE.ENRLFL",
+            "name": "ENRLFL",
+            "label": "Enrolled in the Study",
+            "dataType": "string",
+            "length": 1,
+            "keySequence": 16
+        },
+        {
+            "itemOID": "IT.ADAE.AEREL",
+            "name": "AEREL",
+            "label": "Causality",
+            "dataType": "string",
+            "length": 7,
+            "keySequence": 17
+        },
+        {
+            "itemOID": "IT.ADAE.AEBODSYS",
+            "name": "AEBODSYS",
+            "label": "Body System",
+            "dataType": "integer",
+            "length": 3,
+            "keySequence": 18
+        },
+        {
+            "itemOID": "IT.ADAE.AEBDSYCD",
+            "name": "AEBDSYCD",
+            "label": "Body System Code",
+            "dataType": "integer",
+            "length": 3,
+            "keySequence": 19
+        },
+        {
+            "itemOID": "IT.ADAE.AESTDT",
+            "name": "AESTDT",
+            "label": "Adverse Event Start Date",
+            "dataType": "string",
+            "length": 10,
+            "keySequence": 20
+        },
+        {
+            "itemOID": "IT.ADAE.AEENDT",
+            "name": "AEENDT",
+            "label": "Adverse Event End Date",
+            "dataType": "string",
+            "length": 10,
+            "keySequence": 21
+        },
+        {
+            "itemOID": "IT.ADAE.AESTDTF",
+            "name": "AESTDTF",
+            "label": "Analysis Start Date Imputation Flag",
+            "dataType": "integer",
+            "length": 3,
+            "keySequence": 22
+        },
+        {
+            "itemOID": "IT.ADAE.AEENDTF",
+            "name": "AEENDTF",
+            "label": "Analysis End Date Imputation Flag",
+            "dataType": "integer",
+            "length": 3,
+            "keySequence": 23
+        },
+        {
+            "itemOID": "IT.ADAE.TRT01P",
+            "name": "TRT01P",
+            "label": "Planned treatment for Period 1",
+            "dataType": "string",
+            "length": 4,
+            "keySequence": 24
+        },
+        {
+            "itemOID": "IT.ADAE.TRT02P",
+            "name": "TRT02P",
+            "label": "Planned treatment for Period 2",
+            "dataType": "string",
+            "length": 5,
+            "keySequence": 25
+        },
+        {
+            "itemOID": "IT.ADAE.TRT03P",
+            "name": "TRT03P",
+            "label": "Planned treatment for Period 3",
+            "dataType": "string",
+            "length": 3,
+            "keySequence": 26
+        },
+        {
+            "itemOID": "IT.ADAE.TRT01A",
+            "name": "TRT01A",
+            "label": "Actual Treatment for Period 2",
+            "dataType": "string",
+            "length": 4,
+            "keySequence": 27
+        },
+        {
+            "itemOID": "IT.ADAE.TRT02A",
+            "name": "TRT02A",
+            "label": "Actual Treatment for Period 3",
+            "dataType": "string",
+            "length": 5,
+            "keySequence": 28
+        },
+        {
+            "itemOID": "IT.ADAE.TRT03A",
+            "name": "TRT03A",
+            "label": "Actual Treatment for Period 4",
+            "dataType": "string",
+            "length": 3,
+            "keySequence": 29
+        },
+        {
+            "itemOID": "IT.ADAE.TRT01PN",
+            "name": "TRT01PN",
+            "label": "Number for Planned treatment for Period 1",
+            "dataType": "integer",
+            "length": 1,
+            "keySequence": 30
+        },
+        {
+            "itemOID": "IT.ADAE.TRT02PN",
+            "name": "TRT02PN",
+            "label": "Number for Planned treatment for Period 2 Numeric",
+            "dataType": "integer",
+            "length": 1,
+            "keySequence": 31
+        },
+        {
+            "itemOID": "IT.ADAE.TRT03PN",
+            "name": "TRT03PN",
+            "label": "Number for Planned treatment for Period 3 Numeric",
+            "dataType": "integer",
+            "length": 1,
+            "keySequence": 32
+        },
+        {
+            "itemOID": "IT.ADAE.TRT01AN",
+            "name": "TRT01AN",
+            "label": "Number for Actual Treatment for Period 1",
+            "dataType": "integer",
+            "length": 1,
+            "keySequence": 33
+        },
+        {
+            "itemOID": "IT.ADAE.TRT02AN",
+            "name": "TRT02AN",
+            "label": "Number for Actual Treatment for Period 2",
+            "dataType": "integer",
+            "length": 1,
+            "keySequence": 34
+        },
+        {
+            "itemOID": "IT.ADAE.TRT03AN",
+            "name": "TRT03AN",
+            "label": "Number for Actual Treatment for Period 3",
+            "dataType": "integer",
+            "length": 1,
+            "keySequence": 35
+        },
+        {
+            "itemOID": "IT.ADAE.TRTSDT",
+            "name": "TRTSDT",
+            "label": "Date of First Exposure Treatment",
+            "dataType": "string",
+            "length": 10,
+            "keySequence": 36
+        },
+        {
+            "itemOID": "IT.ADAE.TRTSDTM",
+            "name": "TRTSDTM",
+            "label": "Datetime of First Exposure to Treatment",
+            "dataType": "string",
+            "length": 10,
+            "keySequence": 37
+        },
+        {
+            "itemOID": "IT.ADAE.TR01SDT",
+            "name": "TR01SDT",
+            "label": "Datetime of First Exposure in Period 1",
+            "dataType": "string",
+            "length": 10,
+            "keySequence": 38
+        },
+        {
+            "itemOID": "IT.ADAE.TR02SDT",
+            "name": "TR02SDT",
+            "label": "Datetime of First Exposure in Period 2",
+            "dataType": "string",
+            "length": 10,
+            "keySequence": 39
+        },
+        {
+            "itemOID": "IT.ADAE.TR03SDT",
+            "name": "TR03SDT",
+            "label": "Datetime of First Exposure in Period 3",
+            "dataType": "integer",
+            "length": 3,
+            "keySequence": 40
+        },
+        {
+            "itemOID": "IT.ADAE.TR01EDT",
+            "name": "TR01EDT",
+            "label": "Datetime of Last Exposure in Period 1",
+            "dataType": "string",
+            "length": 10,
+            "keySequence": 41
+        },
+        {
+            "itemOID": "IT.ADAE.TR02EDT",
+            "name": "TR02EDT",
+            "label": "Datetime of Last Exposure in Period 2",
+            "dataType": "string",
+            "length": 10,
+            "keySequence": 42
+        },
+        {
+            "itemOID": "IT.ADAE.TR03EDT",
+            "name": "TR03EDT",
+            "label": "Datetime of Last Exposure in Period 3",
+            "dataType": "integer",
+            "length": 3,
+            "keySequence": 43
+        },
+        {
+            "itemOID": "IT.ADAE.APERIOD",
+            "name": "APERIOD",
+            "label": "Period",
+            "dataType": "integer",
+            "length": 3,
+            "keySequence": 44
+        },
+        {
+            "itemOID": "IT.ADAE.APERIODN",
+            "name": "APERIODN",
+            "label": "APERIODN, order",
+            "dataType": "integer",
+            "length": 3,
+            "keySequence": 45
+        },
+        {
+            "itemOID": "IT.ADAE.TRTC",
+            "name": "TRTC",
+            "label": "Current Treatment",
+            "dataType": "integer",
+            "length": 3,
+            "keySequence": 46
+        }
+    ],
+    "rows": [
+        [
+            "XYZ",
+            "ADAE",
+            "XYZ-001-26",
+            26,
+            1,
+            "Single Arm Study",
+            "Jaw Pain",
+            null,
+            "No",
+            "Mild",
+            null,
+            "Y",
+            null,
+            "Y",
+            "Y",
+            "Y",
+            "RELATED",
+            null,
+            null,
+            "12/31/1969",
+            "12/31/1969",
+            null,
+            null,
+            "Mute",
+            "MyTAP",
+            "SPT",
+            "Mute",
+            "MyTAP",
+            "SPT",
+            1,
+            2,
+            3,
+            1,
+            2,
+            3,
+            "01/08/2019",
+            "01/08/2019",
+            "01/08/2019",
+            null,
+            null,
+            "01/18/2019",
+            null,
+            null,
+            null,
+            null,
+            null
+        ],
+        [
+            "XYZ",
+            "ADAE",
+            "XYZ-001-17",
+            17,
+            1,
+            "Single Arm Study",
+            "Jaw Pain",
+            null,
+            "No",
+            "Mild",
+            null,
+            "Y",
+            null,
+            "Y",
+            "Y",
+            "Y",
+            "RELATED",
+            null,
+            null,
+            "12/31/1969",
+            "12/31/1969",
+            null,
+            null,
+            "Mute",
+            "MyTAP",
+            "SPT",
+            "Mute",
+            "MyTAP",
+            "SPT",
+            1,
+            2,
+            3,
+            1,
+            2,
+            3,
+            null,
+            null,
+            null,
+            "01/08/2019",
+            null,
+            null,
+            "01/18/2019",
+            null,
+            null,
+            null,
+            null
+        ]
+    ]
+}
