@@ -1,0 +1,86 @@
+{
+    "datasetJSONCreationDateTime": "2025-01-16T13:49:48",
+    "datasetJSONVersion": "1.1.0",
+    "fileOID": "XYZ_SDTM_ADDE",
+    "dbLastModifiedDateTime": "2025-01-16T13:49:48",
+    "originator": "EDA Clinical",
+    "sourceSystem": {
+        "name": "Python",
+        "version": "3.8.0"
+    },
+    "studyOID": "SilentNight",
+    "metaDataVersionOID": "1.0",
+    "metaDataRef": "define.xml",
+    "itemGroupOID": "IG.ADDE",
+    "records": 2,
+    "name": "ADDE",
+    "label": "Analysis Dataset of Device Events",
+    "columns": [
+        {
+            "itemOID": "IT.ADDE.STUDYID",
+            "name": "STUDYID",
+            "label": "Study Identifier",
+            "dataType": "string",
+            "length": 3,
+            "keySequence": 1
+        },
+        {
+            "itemOID": "IT.ADDE.USUBJID",
+            "name": "USUBJID",
+            "label": "Unique Subject Identifier",
+            "dataType": "string",
+            "length": 10,
+            "keySequence": 2
+        },
+        {
+            "itemOID": "IT.ADDE.SPDEVID",
+            "name": "SPDEVID",
+            "label": "Sponsor Device Identifier",
+            "dataType": "string",
+            "length": 4,
+            "keySequence": 3
+        },
+        {
+            "itemOID": "IT.ADDE.DETERM",
+            "name": "DETERM",
+            "label": "Device-Event Term",
+            "dataType": "string",
+            "length": 14,
+            "keySequence": 4
+        },
+        {
+            "itemOID": "IT.ADDE.DECAT",
+            "name": "DECAT",
+            "label": "Device-Event Category",
+            "dataType": "string",
+            "length": 6,
+            "keySequence": 5
+        },
+        {
+            "itemOID": "IT.ADDE.DEDTC",
+            "name": "DEDTC",
+            "label": "Date of Collection",
+            "dataType": "string",
+            "length": 10,
+            "keySequence": 6
+        }
+    ],
+    "rows": [
+        [
+            "XYZ",
+            "XYZ-001-7",
+            "B007",
+            "Product Damage",
+            "Defect",
+            "01/16/2019"
+        ],
+        [
+            "XYZ",
+            "XYZ-001-31",
+            "B031",
+            "Product Damage",
+            "Defect",
+            "01/14/2019"
+        ]
+    ]
+}
