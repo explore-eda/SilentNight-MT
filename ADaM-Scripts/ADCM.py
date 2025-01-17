@@ -36,14 +36,34 @@ transformed_data['CMONGO'] = CM_data['CMENRTPT'].apply(lambda x: 'Y' if x == 'ON
 transformed_data['CMSTDTC'] = pd.to_datetime(CM_data['CMSTDTC']).dt.strftime('%m/%d/%Y')
 transformed_data['CMENDTC'] = pd.to_datetime(CM_data['CMENDTC']).dt.strftime('%m/%d/%Y')
 
-# TODO: No such 'CMSTDTC' and 'CMENDTC' in the ADSL_data, so we will fill it with "null"
-# transformed_data['ASTDT'] = pd.to_datetime(ADSL_data['CMSTDTC'], errors='coerce').dt.strftime('%Y-%m-%d')
-# transformed_data['AENDT'] = pd.to_datetime(ADSL_data['CMENDTC'], errors='coerce').dt.strftime('%Y-%m-%d')
+transformed_data['ASTDT'] = pd.to_datetime(CM_data['CMSTDTC'], errors='coerce').dt.strftime('%m/%d/%Y') # New Change
+transformed_data['AENDT'] = pd.to_datetime(CM_data['CMENDTC'], errors='coerce').dt.strftime('%m/%d/%Y') # New Change
 
-# TODO: No such 'ASTDT' and 'AENDT' in the ADSL_data, so we will fill it with "null"
-# transformed_data['ADUR'] = (pd.to_datetime(ADSL_data['AENDT']) - pd.to_datetime(ADSL_data['ASTDT'])).dt.days
+def determine_date_flag(date_col):
+    flags = []
+    for date in date_col:
+        if pd.isna(date):
+            flags.append('Y')  # Year, Month, and Day are missing
+        else:
+            components = str(date).split('-')
+            if len(components) == 3 and components[2] == '':
+                flags.append('D')
+            elif len(components) == 3 and components[1] == '':
+                flags.append('M')
+            elif len(components) == 1:
+                flags.append('Y')
+            else:
+                flags.append("No Missing")
+    return flags
 
-# TODO: No such a variable called "SCRNFL" in the ADSL_data, so we will fill it with "null"
+transformed_data['ASTDTF'] = determine_date_flag(CM_data['CMSTDTC']) # New Change
+transformed_data['AENDTF'] = determine_date_flag(CM_data['CMENDTC']) # New Change
+
+transformed_data['ADUR'] = (
+    pd.to_datetime(transformed_data['AENDT'], errors='coerce') -
+    pd.to_datetime(transformed_data['ASTDT'], errors='coerce')
+).dt.days # New Change
+
 required_flags = ['ENRLFL', 'ITTFL', 'SAFFL', 'FASFL', 'DTHFL']
 for flag in required_flags:
     if flag in ADSL_data.columns:
@@ -59,25 +79,32 @@ transformed_data['TRT01P'] = ADSL_data.set_index('USUBJID').loc[transformed_data
 transformed_data['TRT02P'] = ADSL_data.set_index('USUBJID').loc[transformed_data['USUBJID'], 'TRT02P'].values
 transformed_data['TRT03P'] = ADSL_data.set_index('USUBJID').loc[transformed_data['USUBJID'], 'TRT03P'].values
 
+transformed_data['CONCOMFL'] = transformed_data.apply(
+    lambda row: 'Y' if (
+        pd.notnull(row['ASTDT']) and
+        pd.notnull(ADSL_data.loc[ADSL_data['USUBJID'] == row['USUBJID'], 'TR01SDT'].values[0]) and
+        pd.to_datetime(row['ASTDT']) >= pd.to_datetime(
+            ADSL_data.loc[ADSL_data['USUBJID'] == row['USUBJID'], 'TR01SDT'].values[0])
+    ) else 'N', axis=1
+)
 
-# TODO: Since 'ASTDT' does not exist in the ADSL_data, I could not process the 'CONCOMFL', 'PRIORFL', and 'FUPFL' columns.
-# transformed_data['CONCOMFL'] = transformed_data.apply(
-#     lambda row: 'Y' if pd.notnull(row['ASTDT']) and pd.notnull(ADSL_data.loc[ADSL_data['USUBJID'] == row['USUBJID'], 'TR01SDT'].values[0]) and 
-#                 pd.to_datetime(row['ASTDT']) >= pd.to_datetime(ADSL_data.loc[ADSL_data['USUBJID'] == row['USUBJID'], 'TR01SDT'].values[0]) 
-#                 else 'N', axis=1
-# )
+transformed_data['PRIORFL'] = transformed_data.apply(
+    lambda row: 'Y' if (
+        pd.notnull(row['ASTDT']) and
+        pd.notnull(ADSL_data.loc[ADSL_data['USUBJID'] == row['USUBJID'], 'TR01SDT'].values[0]) and
+        pd.to_datetime(row['ASTDT']) < pd.to_datetime(
+            ADSL_data.loc[ADSL_data['USUBJID'] == row['USUBJID'], 'TR01SDT'].values[0])
+    ) else 'N', axis=1
+)
 
-# transformed_data['PRIORFL'] = transformed_data.apply(
-#     lambda row: 'Y' if pd.notnull(row['ASTDT']) and pd.notnull(ADSL_data.loc[ADSL_data['USUBJID'] == row['USUBJID'], 'TR01SDT'].values[0]) and 
-#                 pd.to_datetime(row['ASTDT']) < pd.to_datetime(ADSL_data.loc[ADSL_data['USUBJID'] == row['USUBJID'], 'TR01SDT'].values[0]) 
-#                 else 'N', axis=1
-# )
-
-# transformed_data['FUPFL'] = transformed_data.apply(
-#     lambda row: 'Y' if pd.notnull(row['ASTDT']) and pd.notnull(ADSL_data.loc[ADSL_data['USUBJID'] == row['USUBJID'], 'TR03EDT'].values[0]) and 
-#                 pd.to_datetime(row['ASTDT']) > pd.to_datetime(ADSL_data.loc[ADSL_data['USUBJID'] == row['USUBJID'], 'TR03EDT'].values[0]) 
-#                 else 'N', axis=1
-# )
+transformed_data['FUPFL'] = transformed_data.apply(
+    lambda row: 'Y' if (
+        pd.notnull(row['ASTDT']) and
+        pd.notnull(ADSL_data.loc[ADSL_data['USUBJID'] == row['USUBJID'], 'TR03EDT'].values[0]) and
+        pd.to_datetime(row['ASTDT']) > pd.to_datetime(
+            ADSL_data.loc[ADSL_data['USUBJID'] == row['USUBJID'], 'TR03EDT'].values[0])
+    ) else 'N', axis=1
+)
 
 transformed_data['CMSEQ'] = CM_data['CMSEQ']
 
@@ -120,7 +147,7 @@ for sheet_name in domain_names:
             sheet_data.set_index("Variable Name")["Variable Label"].to_dict()
         )
 
-output_directory = f"/Users/haoxiang/Desktop/SilentNight-MT/dataset_json_{passed_sheet_name}/"
+output_directory = f"/Users/haoxiang/Desktop/SilentNight-MT/ADaM_JSON_files/dataset_json_{passed_sheet_name}/"
 os.makedirs(output_directory, exist_ok=True)
 
 python_version = sys.version.split()[0]

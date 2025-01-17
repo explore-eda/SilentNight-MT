@@ -27,20 +27,27 @@ transformed_data['PARAM'] = VS_data['VSTEST']
 transformed_data['PARAMCD'] = VS_data['VSTESTCD']
 transformed_data['AVAL'] = VS_data['VSORRES']
 transformed_data['AVALC'] = VS_data['VSSTRESC']
-transformed_data['DTYPE'] = '?'
 transformed_data['VISIT'] = VS_data['VISIT']
 transformed_data['VISITNUM'] = VS_data['VISITNUM']
-transformed_data['AVISIT'] = 'AVISIT' 
-transformed_data['AVISITN'] = 'null'
-transformed_data['TRTC'] = 'null' 
-transformed_data['ANL01FL'] = '?'
+# transformed_data['DTYPE'] = '?'
+# transformed_data['AVISIT'] = 'AVISIT' 
+# transformed_data['AVISITN'] = 'null'
+# transformed_data['TRTC'] = 'null' 
+# transformed_data['ANL01FL'] = '?'
 
 for flag in ['FASFL', 'SAFFL', 'ITTFL', 'COMPLFL', 'ENRLFL']:
     transformed_data[flag] = ADSL_data.set_index('USUBJID').loc[transformed_data['USUBJID'], flag].values
 
+
 # Fill unmapped variables with "null"
 spec_data['Variable Name'] = spec_data['Variable Name'].str.strip()
 required_columns = spec_data['Variable Name'].dropna().tolist()
+
+# Temporarily remove variables/columns that are not hidden in the specification file
+excluded_columns = ['DTYPE', 'AVISIT', 'AVISITN', 'TRTC', 'ANL01FL']
+required_columns = [col for col in required_columns if col not in excluded_columns]
+transformed_data = transformed_data[required_columns]
+
 for column in required_columns:
     if column not in transformed_data.columns:
         transformed_data[column] = "null"
@@ -77,7 +84,7 @@ for sheet_name in domain_names:
             sheet_data.set_index("Variable Name")["Variable Label"].to_dict()
         )
 
-output_directory = f"/Users/haoxiang/Desktop/SilentNight-MT/dataset_json_{passed_sheet_name}/"
+output_directory = f"/Users/haoxiang/Desktop/SilentNight-MT/ADaM_JSON_files/dataset_json_{passed_sheet_name}/"
 os.makedirs(output_directory, exist_ok=True)
 
 python_version = sys.version.split()[0]

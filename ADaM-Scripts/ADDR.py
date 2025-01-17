@@ -57,7 +57,7 @@ for sheet_name in domain_names:
             sheet_data.set_index("Variable Name")["Variable Label"].to_dict()
         )
 
-output_directory = f"/Users/haoxiang/Desktop/SilentNight-MT/dataset_json_{passed_sheet_name}/"
+output_directory = f"/Users/haoxiang/Desktop/SilentNight-MT/ADaM_JSON_files/dataset_json_{passed_sheet_name}/"
 os.makedirs(output_directory, exist_ok=True)
 
 python_version = sys.version.split()[0]

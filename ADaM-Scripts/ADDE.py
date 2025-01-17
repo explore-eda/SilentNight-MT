@@ -18,7 +18,7 @@ transformed_data['STUDYID'] = DE_data['STUDYID']
 transformed_data['USUBJID'] = DE_data['USUBJID']
 transformed_data['SPDEVID'] = DE_data['SPDEVID']
 transformed_data['DETERM'] = DE_data['DETERM']
-transformed_data['DECAT'] = DE_data.get('DECAT', 'null')
+transformed_data['DECAT'] = DE_data['DETERM'].apply(lambda x: "Defect" if x == "Product Damage" else None) # New Change
 transformed_data['DEDTC'] = pd.to_datetime(DE_data['DEDTC'], errors='coerce').dt.strftime('%m/%d/%Y')
 
 # Fill unmapped variables with "null"
@@ -60,7 +60,7 @@ for sheet_name in domain_names:
             sheet_data.set_index("Variable Name")["Variable Label"].to_dict()
         )
 
-output_directory = f"/Users/haoxiang/Desktop/SilentNight-MT/dataset_json_{passed_sheet_name}/"
+output_directory = f"/Users/haoxiang/Desktop/SilentNight-MT/ADaM_JSON_files/dataset_json_{passed_sheet_name}/"
 os.makedirs(output_directory, exist_ok=True)
 
 python_version = sys.version.split()[0]

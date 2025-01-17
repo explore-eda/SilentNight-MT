@@ -4,86 +4,52 @@ import json
 import sys
 from datetime import datetime
 
+QS_path = '/Users/haoxiang/Desktop/SilentNight-MT/transformed_files/Transformed_QS.xlsx'
 DM_path = '/Users/haoxiang/Desktop/SilentNight-MT/transformed_files/Transformed_DM.xlsx'
-AE_path = '/Users/haoxiang/Desktop/SilentNight-MT/transformed_files/Transformed_AE.xlsx'
 ADSL_path = '/Users/haoxiang/Desktop/SilentNight-MT/transformed_files/Transformed_ADSL.xlsx'
 spec_path = '/Users/haoxiang/Desktop/SilentNight-MT/XYZ_ADaM_Spec_v1.xlsx'
 
-passed_sheet_name = 'ADAE'
+passed_sheet_name = 'ADQS'
 
+QS_data = pd.read_excel(QS_path, sheet_name='Sheet1')
 DM_data = pd.read_excel(DM_path, sheet_name='Sheet1')
-AE_data = pd.read_excel(AE_path, sheet_name='Sheet1')
 ADSL_data = pd.read_excel(ADSL_path, sheet_name='Sheet1')
 spec_data = pd.read_excel(spec_path, sheet_name=passed_sheet_name)
 
-transformed_data = pd.DataFrame(index=AE_data.index)
+transformed_data = pd.DataFrame(index=QS_data.index)
 
-transformed_data['STUDYID'] = DM_data['STUDYID'].iloc[0]
+transformed_data['STUDYID'] = QS_data['STUDYID']
 transformed_data['DOMAIN'] = passed_sheet_name
-transformed_data['USUBJID'] = DM_data['USUBJID']
+transformed_data['USUBJID'] = QS_data['USUBJID']
 transformed_data['SUBJID'] = DM_data['SUBJID']
-transformed_data['SITEID'] = DM_data['SITEID']
-transformed_data['ARM'] = DM_data['ACTARM']
-transformed_data['AETERM'] = AE_data['AETERM']
-transformed_data['AEDECOD'] = AE_data['AEDECOD']
-transformed_data['AESER'] = AE_data['AESER']
-transformed_data['AESEV'] = AE_data['AESEV']
-transformed_data['DTHFL'] = ADSL_data['DTHFL']
-transformed_data['SAFFL'] = ADSL_data['SAFFL']
-transformed_data['FASFL'] = ADSL_data['FASFL']
-transformed_data['ITTFL'] = ADSL_data['ITTFL']
-transformed_data['COMPLFL'] = ADSL_data['COMPLFL']
-transformed_data['ENRLFL'] = ADSL_data['ENRLFL']
-transformed_data['AEREL'] = AE_data['AEREL']
-transformed_data['AEBODSYS'] = AE_data['AEBODSYS']
-transformed_data['AEBDSYCD'] = AE_data['AEBDSYCD']
-transformed_data['AESTDT'] = pd.to_datetime(AE_data['AESTDTC'], errors='coerce').dt.strftime('%m/%d/%Y')
-transformed_data['AEENDT'] = pd.to_datetime(AE_data['AEENDTC'], errors='coerce').dt.strftime('%m/%d/%Y')
+transformed_data['QSSEQ'] = QS_data['QSSEQ']
+transformed_data['PARAM'] = QS_data['QSTEST']
+transformed_data['PARAMCD'] = QS_data['QSTESTCD']
+transformed_data['PARCAT1'] = QS_data['QSCAT']
+transformed_data['AVAL'] = QS_data['QSORRES']
+transformed_data['AVALC'] = QS_data['QSSTRESC']
+transformed_data['QSDT'] = QS_data['QSDTC']
+transformed_data['ADT'] = transformed_data['QSDT']
+transformed_data['VISITNUM'] = QS_data['VISITNUM']
 
-def determine_date_flag(date_col):
-    flags = []
-    for date in date_col:
-        if pd.isna(date):
-            flags.append('Y')  # Year, Month, and Day are missing
-        else:
-            components = str(date).split('-')
-            if len(components) == 3 and components[2] == '':
-                flags.append('D')
-            elif len(components) == 3 and components[1] == '':
-                flags.append('M')
-            elif len(components) == 1:
-                flags.append('Y')
-            else:
-                flags.append("No Missing")
-    return flags
+transformed_data['FASFL'] = ADSL_data.set_index('USUBJID').loc[transformed_data['USUBJID'], 'FASFL'].values
+transformed_data['SAFFL'] = ADSL_data.set_index('USUBJID').loc[transformed_data['USUBJID'], 'SAFFL'].values
+transformed_data['ITTFL'] = ADSL_data.set_index('USUBJID').loc[transformed_data['USUBJID'], 'ITTFL'].values
+transformed_data['COMPLFL'] = ADSL_data.set_index('USUBJID').loc[transformed_data['USUBJID'], 'COMPLFL'].values
+transformed_data['ENRLFL'] = ADSL_data.set_index('USUBJID').loc[transformed_data['USUBJID'], 'ENRLFL'].values
 
-transformed_data['AESTDTF'] = determine_date_flag(AE_data['AESTDTC']) # New Change
-transformed_data['AEENDTF'] = determine_date_flag(AE_data['AEENDTC']) # New Change
-
-for period in ['01', '02', '03']:
-    transformed_data[f'TRT{period}P'] = ADSL_data[f'TRT{period}P']
-    transformed_data[f'TRT{period}A'] = ADSL_data[f'TRT{period}A']
-    transformed_data[f'TRT{period}PN'] = ADSL_data[f'TRT{period}PN']
-    transformed_data[f'TRT{period}AN'] = ADSL_data[f'TRT{period}AN']
-
-transformed_data['TRTSDT'] = ADSL_data['TRTSDT']
-transformed_data['TRTSDTM'] = ADSL_data['TRTSDTM']
-for period in ['01', '02', '03']:
-    transformed_data[f'TR{period}SDT'] = ADSL_data[f'TR{period}SDT']
-    transformed_data[f'TR{period}EDT'] = ADSL_data[f'TR{period}EDT']
-
-# transformed_data['APERIOD'] = 'null' 
-# transformed_data['APERIODN'] = 'null' 
-# transformed_data['TRTC'] = 'null'
-
-# # Fill unmapped variables with "null"
+# Fill unmapped variables with "null"
 spec_data['Variable Name'] = spec_data['Variable Name'].str.strip()
 required_columns = spec_data['Variable Name'].dropna().tolist()
+
+excluded_columns = ['VISIT', 'DTYPE', 'AVISIT', 'AVISITN', 'TRTC', 'ANL01FL']
+required_columns = [col for col in required_columns if col not in excluded_columns]
+transformed_data = transformed_data[required_columns]
+
 for column in required_columns:
     if column not in transformed_data.columns:
         transformed_data[column] = "null"
 
-# Reorder columns to match the specification order
 transformed_data = transformed_data[required_columns]
 
 output_path = f'/Users/haoxiang/Desktop/SilentNight-MT/transformed_files/Transformed_{passed_sheet_name}.xlsx'
@@ -101,7 +67,7 @@ xls = pd.ExcelFile(xlsx_path)
 spec_xls = pd.ExcelFile(specification_path)
 spec_data = pd.read_excel(specification_path, sheet_name=passed_sheet_name)
 
-domain_names = {passed_sheet_name: "Analysis Dataset of Adverse Events"}
+domain_names = {passed_sheet_name: "Analysis Dataset of Questionnaires"}
 required_columns = spec_data['Variable Name'].dropna().tolist()
 sdtm_domains = {passed_sheet_name: required_columns}
 

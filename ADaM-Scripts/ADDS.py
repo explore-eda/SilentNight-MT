@@ -45,10 +45,13 @@ transformed_data['DSTERM'] = DS_data['DSTERM']
 transformed_data['DSDECOD'] = DS_data['DSDECOD']
 transformed_data['DSCAT'] = DS_data['DSCAT']
 
-transformed_data['DSSTDTC'] = DS_data['DSSTDTC']
-transformed_data['DSSTDT'] = pd.to_datetime(DS_data['DSSTDTC'], errors='coerce').dt.strftime('%Y-%m-%d')
-transformed_data['DSSTDY'] = DS_data['DSSTDY']
+transformed_data['DSSTDTC'] = pd.to_datetime(DS_data['DSSTDTC'], errors='coerce').dt.strftime('%m/%d/%Y') # New Change
+transformed_data['DSSTDT'] = pd.to_datetime(DS_data['DSSTDTC'], errors='coerce').dt.strftime('%m/%d/%Y') # New Change
+transformed_data['DSSTDY'] = DS_data['DSSTDY'] # New Change
 
+transformed_data['DSDTC'] = transformed_data['DSSTDTC']
+transformed_data['DSDT'] = transformed_data['DSSTDT']
+transformed_data['EPOCH'] = "OPEN LABEL TREATMENT 2"
 
 # Fill unmapped variables with "null"
 spec_data['Variable Name'] = spec_data['Variable Name'].str.strip()
@@ -89,7 +92,7 @@ for sheet_name in domain_names:
             sheet_data.set_index("Variable Name")["Variable Label"].to_dict()
         )
 
-output_directory = f"/Users/haoxiang/Desktop/SilentNight-MT/dataset_json_{passed_sheet_name}/"
+output_directory = f"/Users/haoxiang/Desktop/SilentNight-MT/ADaM_JSON_files/dataset_json_{passed_sheet_name}/"
 os.makedirs(output_directory, exist_ok=True)
 
 python_version = sys.version.split()[0]

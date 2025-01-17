@@ -48,11 +48,11 @@ sc_edulevel = SC_data[SC_data['SCTESTCD'] == 'EDULEVEL'][['USUBJID', 'SCORRES']]
 transformed_data = pd.merge(transformed_data, sc_empjob, on='USUBJID', how='left')
 transformed_data = pd.merge(transformed_data, sc_edulevel, on='USUBJID', how='left')
 transformed_data['COUNTRY'] = DM_data['COUNTRY']
-transformed_data['FASFL'] = 'null'
 transformed_data['SAFFL'] = DM_data['ACTARMCD'].notna().apply(lambda x: 'Y' if x else None)
 transformed_data['ITTFL'] = DM_data['ARMCD'].notna().apply(lambda x: 'Y' if x else None)
 transformed_data['COMPLFL'] = 'Y'
 transformed_data['ENRLFL'] = DM_data['RFICDTC'].notna().apply(lambda x: 'Y' if x else None)
+transformed_data['FASFL'] = transformed_data['ENRLFL'] # New Change
 transformed_data['DTHFL'] = DM_data['DTHFL']
 
 transformed_data['RFICDT'] = pd.to_datetime(DM_data['RFICDTC'], errors='coerce').dt.strftime('%m/%d/%Y')
@@ -137,7 +137,7 @@ for sheet_name in domain_names:
             sheet_data.set_index("Variable Name")["Variable Label"].to_dict()
         )
 
-output_directory = f"/Users/haoxiang/Desktop/SilentNight-MT/dataset_json_{passed_sheet_name}/"
+output_directory = f"/Users/haoxiang/Desktop/SilentNight-MT/ADaM_JSON_files/dataset_json_{passed_sheet_name}/"
 os.makedirs(output_directory, exist_ok=True)
 
 python_version = sys.version.split()[0]

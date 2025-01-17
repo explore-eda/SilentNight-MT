@@ -1,8 +1,8 @@
 {
-    "datasetJSONCreationDateTime": "2025-01-15T12:02:08",
+    "datasetJSONCreationDateTime": "2025-01-16T13:49:48",
     "datasetJSONVersion": "1.1.0",
     "fileOID": "XYZ_SDTM_ADDE",
-    "dbLastModifiedDateTime": "2025-01-15T12:02:08",
+    "dbLastModifiedDateTime": "2025-01-16T13:49:48",
     "originator": "EDA Clinical",
     "sourceSystem": {
         "name": "Python",
@@ -52,8 +52,8 @@
             "itemOID": "IT.ADDE.DECAT",
             "name": "DECAT",
             "label": "Device-Event Category",
-            "dataType": "integer",
-            "length": 3,
+            "dataType": "string",
+            "length": 6,
             "keySequence": 5
         },
         {
@@ -71,7 +71,7 @@
             "XYZ-001-7",
             "B007",
             "Product Damage",
-            null,
+            "Defect",
             "01/16/2019"
         ],
         [
@@ -79,7 +79,7 @@
             "XYZ-001-31",
             "B031",
             "Product Damage",
-            null,
+            "Defect",
             "01/14/2019"
         ]
     ]

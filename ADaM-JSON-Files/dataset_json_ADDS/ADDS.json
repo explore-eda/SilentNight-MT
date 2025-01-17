@@ -1,8 +1,8 @@
 {
-    "datasetJSONCreationDateTime": "2025-01-15T12:07:43",
+    "datasetJSONCreationDateTime": "2025-01-16T13:50:23",
     "datasetJSONVersion": "1.1.0",
     "fileOID": "XYZ_SDTM_ADDS",
-    "dbLastModifiedDateTime": "2025-01-15T12:07:43",
+    "dbLastModifiedDateTime": "2025-01-16T13:50:23",
     "originator": "EDA Clinical",
     "sourceSystem": {
         "name": "Python",
@@ -116,24 +116,24 @@
             "itemOID": "IT.ADDS.DSDTC",
             "name": "DSDTC",
             "label": "Date/Time of Collection",
-            "dataType": "integer",
-            "length": 3,
+            "dataType": "string",
+            "length": 10,
             "keySequence": 13
         },
         {
             "itemOID": "IT.ADDS.DSDT",
             "name": "DSDT",
             "label": "Date/Time of Collection",
-            "dataType": "integer",
-            "length": 3,
+            "dataType": "string",
+            "length": 10,
             "keySequence": 14
         },
         {
             "itemOID": "IT.ADDS.EPOCH",
             "name": "EPOCH",
             "label": "Epoch",
-            "dataType": "integer",
-            "length": 3,
+            "dataType": "string",
+            "length": 22,
             "keySequence": 15
         }
     ],
@@ -148,12 +148,12 @@
             "SCREEN FAILURE",
             "SCREEN FAILURE",
             "Disposition Event",
-            "01-02-2019",
-            "2019-01-02",
+            "01/02/2019",
+            "01/02/2019",
             null,
-            null,
-            null,
-            null
+            "01/02/2019",
+            "01/02/2019",
+            "OPEN LABEL TREATMENT 2"
         ],
         [
             "XYZ",
@@ -165,12 +165,12 @@
             "SCREEN FAILURE",
             "SCREEN FAILURE",
             "Disposition Event",
-            "01-06-2019",
-            "2019-01-06",
+            "01/06/2019",
+            "01/06/2019",
             null,
-            null,
-            null,
-            null
+            "01/06/2019",
+            "01/06/2019",
+            "OPEN LABEL TREATMENT 2"
         ],
         [
             "XYZ",
@@ -182,12 +182,12 @@
             "SCREEN FAILURE",
             "SCREEN FAILURE",
             "Disposition Event",
-            "01-04-2019",
-            "2019-01-04",
+            "01/04/2019",
+            "01/04/2019",
             null,
-            null,
-            null,
-            null
+            "01/04/2019",
+            "01/04/2019",
+            "OPEN LABEL TREATMENT 2"
         ],
         [
             "XYZ",
@@ -199,12 +199,12 @@
             "ADVERSE EVENT",
             "ADVERSE EVENT",
             "Disposition Event",
-            "01-24-2019",
-            "2019-01-24",
+            "01/24/2019",
+            "01/24/2019",
             null,
-            null,
-            null,
-            null
+            "01/24/2019",
+            "01/24/2019",
+            "OPEN LABEL TREATMENT 2"
         ],
         [
             "XYZ",
@@ -216,12 +216,12 @@
             "ADVERSE EVENT",
             "ADVERSE EVENT",
             "Disposition Event",
-            "01-28-2019",
-            "2019-01-28",
+            "01/28/2019",
+            "01/28/2019",
             null,
-            null,
-            null,
-            null
+            "01/28/2019",
+            "01/28/2019",
+            "OPEN LABEL TREATMENT 2"
         ],
         [
             "XYZ",
@@ -233,12 +233,12 @@
             "OTHER",
             "OTHER",
             "Disposition Event",
-            "01-16-2019",
-            "2019-01-16",
+            "01/16/2019",
+            "01/16/2019",
             null,
-            null,
-            null,
-            null
+            "01/16/2019",
+            "01/16/2019",
+            "OPEN LABEL TREATMENT 2"
         ],
         [
             "XYZ",
@@ -250,12 +250,12 @@
             "OTHER",
             "OTHER",
             "Disposition Event",
-            "01-14-2019",
-            "2019-01-14",
+            "01/14/2019",
+            "01/14/2019",
             null,
-            null,
-            null,
-            null
+            "01/14/2019",
+            "01/14/2019",
+            "OPEN LABEL TREATMENT 2"
         ],
         [
             "XYZ",
@@ -267,12 +267,12 @@
             "LOST TO FOLLOW-UP",
             "LOST TO FOLLOW-UP",
             "Disposition Event",
-            "01-12-2019",
-            "2019-01-12",
+            "01/12/2019",
+            "01/12/2019",
             null,
-            null,
-            null,
-            null
+            "01/12/2019",
+            "01/12/2019",
+            "OPEN LABEL TREATMENT 2"
         ],
         [
             "XYZ",
@@ -284,12 +284,12 @@
             "LOST TO FOLLOW-UP",
             "LOST TO FOLLOW-UP",
             "Disposition Event",
-            "01-19-2019",
-            "2019-01-19",
+            "01/19/2019",
+            "01/19/2019",
             null,
-            null,
-            null,
-            null
+            "01/19/2019",
+            "01/19/2019",
+            "OPEN LABEL TREATMENT 2"
         ],
         [
             "XYZ",
@@ -301,12 +301,12 @@
             "LOST TO FOLLOW-UP",
             "LOST TO FOLLOW-UP",
             "Disposition Event",
-            "01-19-2019",
-            "2019-01-19",
+            "01/19/2019",
+            "01/19/2019",
             null,
-            null,
-            null,
-            null
+            "01/19/2019",
+            "01/19/2019",
+            "OPEN LABEL TREATMENT 2"
         ]
     ]
 }
